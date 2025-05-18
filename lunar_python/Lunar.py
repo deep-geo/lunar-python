@@ -683,10 +683,13 @@ class Lunar:
             arr.append("秋社")
         return arr
 
-    def getEightChar(self):
+    def getEightChar(self, gender: int = None):
+        if gender is not None:
+            self._gender = gender
         if self.__eightChar is None:
             self.__eightChar = EightChar.fromLunar(self)
         return self.__eightChar
+
 
     def getBaZi(self):
         ba_zi = self.getEightChar()
